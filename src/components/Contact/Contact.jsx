@@ -80,7 +80,6 @@ import location_icon from '../../assets/location-icon.png'
 import white_arrow from '../../assets/white-arrow.png'
 
 const Contact = () => {
-
     const [result, setResult] = React.useState("");
 
     const onSubmit = async (event) => {
@@ -109,28 +108,67 @@ const Contact = () => {
   return (
     <div className='contact'>
         <div className="contact-col">
-            <h3>Send us a message <img src={msg_icon} alt="" /></h3>
-            <p>Feel free to reach out through contact form or find out our contact information below. Your feedback, questions, and suggestions are important to us as we strive to provide exceptional services to our university community</p>
-            </div>
+            <h3>Send us a message <img src={msg_icon} alt="message icon" /></h3>
+            <p>Feel free to reach out through contact form or find out our contact information below. Your feedback, questions, and suggestions are important to us as we strive to provide exceptional services to our university community.</p>
             
-            <br/>
-            <ul>
-                <li><img src={mail_icon} alt="" />Contact@GreatStack.dev</li>
-                <li><img src={phone_icon} alt="" />+1 123-456-7890</li>
-                <li><img src={location_icon} alt="" />77 Massachusetts Ave, Cambridge<br/>MA 02139, United States</li>
-            </ul>
+            <div className="contact-info">
+                <ul>
+                    <li>
+                        <img src={mail_icon} alt="email icon" />
+                        <span>Contact@GreatStack.dev</span>
+                    </li>
+                    <li>
+                        <img src={phone_icon} alt="phone icon" />
+                        <span>+1 123-456-7890</span>
+                    </li>
+                    <li>
+                        <img src={location_icon} alt="location icon" />
+                        <span>
+                            77 Massachusetts Ave, Cambridge<br/>
+                            MA 02139, United States
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
         
         <div className="contact-col">
             <form onSubmit={onSubmit}> 
-                <label>Your name</label>
-                <input type="text" name='name' placeholder='Enter your name' required />
-                <label>Phone Number</label>
-                <input type="tel" name='phone' placeholder='Enter your mobile-number' required />
-                <label>Write your messages here</label>
-                <textarea name="message" rows="6" placeholder='Enter your message' required></textarea>
-                <button type='submit' className='btn dark-btn'>Submit now <img src={white_arrow} alt="" /></button>
+                <div className="form-group">
+                    <label>Your name</label>
+                    <input 
+                        type="text" 
+                        name='name' 
+                        placeholder='Enter your name' 
+                        required 
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Phone Number</label>
+                    <input 
+                        type="tel" 
+                        name='phone' 
+                        placeholder='Enter your mobile number' 
+                        required 
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label>Write your message here</label>
+                    <textarea 
+                        name="message" 
+                        rows="6" 
+                        placeholder='Enter your message' 
+                        required
+                    ></textarea>
+                </div>
+
+                <button type='submit' className='btn dark-btn'>
+                    Submit now <img src={white_arrow} alt="submit arrow" />
+                </button>
             </form>
-            <span>{result}</span>
+            {result && <span className="result-message">{result}</span>}
         </div>
     </div>
   )
