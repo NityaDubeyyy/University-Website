@@ -18,6 +18,6 @@
 - **Routing:** React Router DOM/
 - **Styling:** CSS Modules Styled-Components.
 - **Form Handling:** Controlled Components (React Forms)
-- **Hosting:** Netlify / Vercel / GitHub Pages *(as per your deployment)*
+- **Hosting:** Netlify / Vercel / GitHub Pages 
 
 Thankyou!!
